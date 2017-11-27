@@ -3,42 +3,44 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Favorite Animals</title>
+  <title>GIF Animals</title>
   <style type="text/css">
     button,
     div,
     form,
     input {
       margin: 10px;      
-    }
+    }    
   </style>
-<!--  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
--->  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 
 <body>
 
   <div class="container">
-    <h1>Animal Search</h1>
+    <div class="jumbotron">
+      <h1 class="display-1" style="text-align: center">Giphy Animal Search</h1>
+      <br/>
 
-    <!-- Rendered Buttons will get Dumped Here  -->
-    <div id="buttons-view"></div>
+      <!-- Rendered Buttons will get Dumped Here  -->
+      <div id="buttons-view"></div>
 
-    <form id="animal-form" style="text-align: right">
-      <label for="animal-input">Submit</label>
-      <input type="text" id="animal-input"><br>
+      <form id="animal-form" style="text-align: right">
+        <label for="animal-input"><strong>Search your Animal</strong></label>
+        <br>
+        <input type="text" id="animal-input"><br>
 
-      <!-- Button triggers new animal to be added -->
-      <input id="add-animal" type="submit" value="Add a Movie">
-    </form>
+        <!-- Button triggers new animal to be added -->
+        <input id="add-animal" type="submit" value="submit" class="btn btn-primary">
+      </form>
 
-    <!-- Animals will Get Dumped Dere -->
-    <div id="animals-view"></div>
+      <!-- Animals will Get Dumped Dere -->
+      <div id="animals-view"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="app.js"></script>
+      </script>
+    </div>
   </div>
 </body>
 

@@ -16,31 +16,23 @@ function displayAnimalInfo() {
     url: queryURL,
     method: "GET"
   }).done(function(response) {
-    console.log(response);
 //    console.log(JSON.stringify(response));    
     for (var i=0; i < response.data.length; i++) {
       var stillImage = response.data[i].images.fixed_height_small_still.url;
       var animateImage = response.data[i].images.fixed_height_small.url;
-      var rating = response.data[i].rating;
 
-      // Create a div to hold rating
-      var p = $('<p>').text("Rating: " + rating);
       // Creating a div to hold the animal
       var animalDiv = $("<div data-state='still' class='gif'>");
 
       // Creating a elements to hold the images
-      var imageSrc = $("<img class='animalImage rounded data-toggle='tooltip' data-placement='top' title='Click to Animate'>").attr({"src": stillImage, "data-still": stillImage, "data-animate": animateImage});
+      var imageSrc = $("<img class='animalImage'>").attr({"src": stillImage, "data-still": stillImage, "data-animate": animateImage});
 
-      // Appending the rating
-      animalDiv.append(p);
       // Appending the image
       animalDiv.append(imageSrc);
 
-      // Putting the entire animal below the previous topics      
+      // Putting the entire animal below the previous topics
       $("#animals-view").append(animalDiv);
-      console.log(imageSrc);
     }
-    return false;
   });
 }
 
@@ -57,7 +49,7 @@ function renderButtons() {
 
     // Then dynamicaly generating buttons for each animal in the array
     // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-    var a = $('<button type="button" class="btn btn-outline-primary">');
+    var a = $("<button>");
     // Adding a class of animal to our button
     a.addClass("animal");
     // Adding a data-attribute
@@ -97,7 +89,7 @@ $(document).on("click", ".animalImage", function() {
   // Else set src to the data-still value
   if (state === "still") {
     $(this).attr("src", $(this).attr("data-animate"));
-    $(this).attr("data-state", "animated");
+    $(this).attr("data-state", "animate");
   } else {
     $(this).attr("src", $(this).attr("data-still"));
     $(this).attr("data-state", "still");
